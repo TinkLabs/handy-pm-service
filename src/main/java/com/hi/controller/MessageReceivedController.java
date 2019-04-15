@@ -23,7 +23,7 @@ import java.util.Date;
  **/
 @RestController
 @Slf4j
-@RequestMapping("/v1/messageReceived")
+@RequestMapping("/v1")
 public class MessageReceivedController extends BaseController{
     @Autowired
     private MessageReceivedService messageReceivedService;
