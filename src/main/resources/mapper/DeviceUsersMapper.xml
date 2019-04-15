@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hi.mapper.DeviceUsersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hi.entity.DeviceUsers">
+        <id column="id" property="id" />
+        <result column="device_id" property="deviceId" />
+        <result column="member_id" property="memberId" />
+        <result column="hotel_id" property="hotelId" />
+        <result column="hotel_room_number" property="hotelRoomNumber" />
+        <result column="hotel_group_code" property="hotelGroupCode" />
+        <result column="hotel_vip_code" property="hotelVipCode" />
+        <result column="hotel_guest_id" property="hotelGuestId" />
+        <result column="hotel_guest_name_id" property="hotelGuestNameId" />
+        <result column="hotel_guest_group_id" property="hotelGuestGroupId" />
+        <result column="hotel_guest_checkin_date" property="hotelGuestCheckinDate" />
+        <result column="hotel_guest_checkout_date" property="hotelGuestCheckoutDate" />
+        <result column="hotel_guest_express_checkout_datetime" property="hotelGuestExpressCheckoutDatetime" />
+        <result column="hotel_guest_integration_data" property="hotelGuestIntegrationData" />
+        <result column="activation_datetime" property="activationDatetime" />
+        <result column="return_datetime" property="returnDatetime" />
+        <result column="scheduled_return_datetime" property="scheduledReturnDatetime" />
+        <result column="first_name" property="firstName" />
+        <result column="last_name" property="lastName" />
+        <result column="salutation" property="salutation" />
+        <result column="language" property="language" />
+        <result column="stripe_customer_id" property="stripeCustomerId" />
+        <result column="paydollar_member_id" property="paydollarMemberId" />
+        <result column="last_payment" property="lastPayment" />
+        <result column="cc_type" property="ccType" />
+        <result column="cc_name" property="ccName" />
+        <result column="cc_number" property="ccNumber" />
+        <result column="cc_fingerprint" property="ccFingerprint" />
+        <result column="cc_expiry" property="ccExpiry" />
+        <result column="email" property="email" />
+        <result column="ui_states" property="uiStates" />
+        <result column="outside_hotel" property="outsideHotel" />
+        <result column="dnd" property="dnd" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="is_paying" property="isPaying" />
+        <result column="payment_token" property="paymentToken" />
+        <result column="remarks" property="remarks" />
+        <result column="gdpr_accepted" property="gdprAccepted" />
+        <result column="opted_in" property="optedIn" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, device_id, member_id, hotel_id, hotel_room_number, hotel_group_code, hotel_vip_code, hotel_guest_id, hotel_guest_name_id, hotel_guest_group_id, hotel_guest_checkin_date, hotel_guest_checkout_date, hotel_guest_express_checkout_datetime, hotel_guest_integration_data, activation_datetime, return_datetime, scheduled_return_datetime, first_name, last_name, salutation, language, stripe_customer_id, paydollar_member_id, last_payment, cc_type, cc_name, cc_number, cc_fingerprint, cc_expiry, email, ui_states, outside_hotel, dnd, created, modified, is_paying, payment_token, remarks, gdpr_accepted, opted_in
+    </sql>
+
+</mapper>

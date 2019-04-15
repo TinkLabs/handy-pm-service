@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hi.mapper.MessageInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hi.entity.MessageInfo">
+        <id column="id" property="id" />
+        <result column="message_id" property="messageId" />
+        <result column="hotel_id" property="hotelId" />
+        <result column="recipient_count" property="recipientCount" />
+        <result column="pushy_id" property="pushyId" />
+        <result column="pushy_app2_id" property="pushyApp2Id" />
+        <result column="send_at" property="sendAt" />
+        <result column="created" property="created" />
+        <result column="status" property="status" />
+        <result column="expiry" property="expiry" />
+        <result column="send_to_pushy" property="sendToPushy" />
+        <result column="retry_at" property="retryAt" />
+        <result column="retry_mqtt" property="retryMqtt" />
+        <result column="modified" property="modified" />
+        <result column="only_once" property="onlyOnce" />
+        <result column="alarm_id" property="alarmId" />
+        <result column="payload" property="payload" />
+        <result column="received" property="received" />
+        <result column="viewed" property="viewed" />
+        <result column="clicked" property="clicked" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, message_id, hotel_id, recipient_count, pushy_id, pushy_app2_id, send_at, created, status, expiry, send_to_pushy, retry_at, retry_mqtt, modified, only_once, alarm_id, payload, received, viewed, clicked
+    </sql>
+
+</mapper>

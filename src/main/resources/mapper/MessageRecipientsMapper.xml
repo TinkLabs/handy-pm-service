@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hi.mapper.MessageRecipientsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hi.entity.MessageRecipients">
+        <id column="id" property="id" />
+        <result column="message_id" property="messageId" />
+        <result column="hotel_id" property="hotelId" />
+        <result column="hotel_room_number" property="hotelRoomNumber" />
+        <result column="device_user_id" property="deviceUserId" />
+        <result column="clicked" property="clicked" />
+        <result column="viewed" property="viewed" />
+        <result column="send_datetime" property="sendDatetime" />
+        <result column="acknowledge_datetime" property="acknowledgeDatetime" />
+        <result column="status" property="status" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="message_info_id" property="messageInfoId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, message_id, hotel_id, hotel_room_number, device_user_id, clicked, viewed, send_datetime, acknowledge_datetime, status, created, modified, message_info_id
+    </sql>
+
+</mapper>

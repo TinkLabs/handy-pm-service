@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hi.mapper.MessagesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hi.entity.Messages">
+        <id column="id" property="id" />
+        <result column="zone_id" property="zoneId" />
+        <result column="user_id" property="userId" />
+        <result column="action" property="action" />
+        <result column="queue" property="queue" />
+        <result column="status" property="status" />
+        <result column="device_status" property="deviceStatus" />
+        <result column="device_activation_type" property="deviceActivationType" />
+        <result column="hotel_ids" property="hotelIds" />
+        <result column="hotel_room_numbers" property="hotelRoomNumbers" />
+        <result column="hotel_guest_group_id" property="hotelGuestGroupId" />
+        <result column="hotel_group_codes" property="hotelGroupCodes" />
+        <result column="hotel_vip_codes" property="hotelVipCodes" />
+        <result column="owner_type" property="ownerType" />
+        <result column="dates" property="dates" />
+        <result column="time" property="time" />
+        <result column="expiry" property="expiry" />
+        <result column="locales" property="locales" />
+        <result column="content" property="content" />
+        <result column="latitude_start" property="latitudeStart" />
+        <result column="longitude_start" property="longitudeStart" />
+        <result column="latitude_end" property="latitudeEnd" />
+        <result column="longitude_end" property="longitudeEnd" />
+        <result column="custom_url" property="customUrl" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="hidden" property="hidden" />
+        <result column="payload" property="payload" />
+        <result column="category" property="category" />
+        <result column="event_planner_id" property="eventPlannerId" />
+        <result column="event_id" property="eventId" />
+        <result column="activated_devices" property="activatedDevices" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, zone_id, user_id, action, queue, status, device_status, device_activation_type, hotel_ids, hotel_room_numbers, hotel_guest_group_id, hotel_group_codes, hotel_vip_codes, owner_type, dates, time, expiry, locales, content, latitude_start, longitude_start, latitude_end, longitude_end, custom_url, created, modified, hidden, payload, category, event_planner_id, event_id, activated_devices
+    </sql>
+
+</mapper>
