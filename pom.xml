@@ -8,7 +8,7 @@
         <version>2.0.6.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>com.hi</groupId>
+    <groupId>com.hi.pushmessage</groupId>
     <artifactId>pm-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pm-service</name>
