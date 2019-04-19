@@ -10,5 +10,5 @@ import java.util.List;
  * @since 2019-04-12
  */
 public interface MessageRecipientsService extends IService<MessageRecipients> {
-    List<MessageRecipients> findNotReceivedMessageRecipients(Integer messageInfoId, Integer deviceUserId);
+    List<MessageRecipients> findNotReceivedMessageRecipients(Integer messageInfoId, String barcode);
 }

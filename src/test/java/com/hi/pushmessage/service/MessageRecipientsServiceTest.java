@@ -26,9 +26,9 @@ public class MessageRecipientsServiceTest {
 
     @Test
     public void findNotReceivedMessageRecipientsTest() {
-        Integer messageInfoId = 14;
+        Integer messageInfoId = 238;
         Integer deviceUserId = 51;
-        List<MessageRecipients> messageRecipients = messageRecipientsService.findNotReceivedMessageRecipients(messageInfoId, deviceUserId);
+        List<MessageRecipients> messageRecipients = messageRecipientsService.findNotReceivedMessageRecipients(messageInfoId, "355655090315419");
         assertThat(1).isEqualTo(messageRecipients.size());
 
     }

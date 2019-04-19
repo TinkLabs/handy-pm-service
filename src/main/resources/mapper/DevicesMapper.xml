@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hi.pushmessage.mapper.DevicesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hi.pushmessage.entity.Devices">
+        <id column="id" property="id" />
+        <result column="zone_id" property="zoneId" />
+        <result column="device_user_id" property="deviceUserId" />
+        <result column="devices_delivery_id" property="devicesDeliveryId" />
+        <result column="barcode" property="barcode" />
+        <result column="token" property="token" />
+        <result column="softsim_key" property="softsimKey" />
+        <result column="status" property="status" />
+        <result column="model" property="model" />
+        <result column="hotel_id" property="hotelId" />
+        <result column="hotel_config_id" property="hotelConfigId" />
+        <result column="version" property="version" />
+        <result column="section" property="section" />
+        <result column="hotel_room_number" property="hotelRoomNumber" />
+        <result column="hotel_hide" property="hotelHide" />
+        <result column="issue" property="issue" />
+        <result column="comment" property="comment" />
+        <result column="external_comment" property="externalComment" />
+        <result column="config" property="config" />
+        <result column="debug" property="debug" />
+        <result column="debug_package" property="debugPackage" />
+        <result column="wifi_mac_address" property="wifiMacAddress" />
+        <result column="service_provider" property="serviceProvider" />
+        <result column="sim_id" property="simId" />
+        <result column="imsi" property="imsi" />
+        <result column="country_code" property="countryCode" />
+        <result column="phone_number" property="phoneNumber" />
+        <result column="virtual_extension" property="virtualExtension" />
+        <result column="last_online" property="lastOnline" />
+        <result column="batterylv" property="batterylv" />
+        <result column="latitude" property="latitude" />
+        <result column="longitude" property="longitude" />
+        <result column="last_gps" property="lastGps" />
+        <result column="hotel_location" property="hotelLocation" />
+        <result column="upgrade_status" property="upgradeStatus" />
+        <result column="device_sim_id" property="deviceSimId" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="adb" property="adb" />
+        <result column="ssid" property="ssid" />
+        <result column="nfc_id" property="nfcId" />
+        <result column="push_type" property="pushType" />
+        <result column="push_package_name" property="pushPackageName" />
+        <result column="device_type" property="deviceType" />
+        <result column="environment" property="environment" />
+        <result column="door_lock_status" property="doorLockStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, zone_id, device_user_id, devices_delivery_id, barcode, token, softsim_key, status, model, hotel_id, hotel_config_id, version, section, hotel_room_number, hotel_hide, issue, comment, external_comment, config, debug, debug_package, wifi_mac_address, service_provider, sim_id, imsi, country_code, phone_number, virtual_extension, last_online, batterylv, latitude, longitude, last_gps, hotel_location, upgrade_status, device_sim_id, created, modified, adb, ssid, nfc_id, push_type, push_package_name, device_type, environment, door_lock_status
+    </sql>
+
+</mapper>

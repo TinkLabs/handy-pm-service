@@ -2,7 +2,7 @@ package com.hi.pushmessage.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.hi.pushmessage.bo.MessageReceivedBo;
-import com.hi.pushmessage.PushMessageCodeEnum;
+import com.hi.pushmessage.common.PushMessageCodeEnum;
 import com.hi.pushmessage.service.MessageReceivedService;
 import com.tinklabs.corecommonbase.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;

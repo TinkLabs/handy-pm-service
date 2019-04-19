@@ -43,8 +43,7 @@ public class MyBatisPlusGenerator {
         StrategyConfig stConfig = new StrategyConfig();
         stConfig.setCapitalMode(false) //全局大写命名
                 .setNaming(NamingStrategy.underline_to_camel)
-                .setInclude("message_recipients")
-                .setInclude("messages");
+                .setInclude("devices");
 //                .setInclude("message_info");
 //                .setInclude("device_users");
         //4. package configuration
