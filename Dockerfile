@@ -2,6 +2,7 @@ FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 ARG JAR_FILE
 RUN mkdir /app
+RUN apt-get update && apt-get install -y curl
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.0.0-linux-x86_64.tar.gz && \
 tar xzvf filebeat-7.0.0-linux-x86_64.tar.gz
 COPY filebeat.yml /filebeat-7.0.0-linux-x86_64/
