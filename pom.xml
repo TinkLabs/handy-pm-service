@@ -148,12 +148,12 @@
         <repository>
             <id>nexus-tinklabs</id>
             <name>tinklabs repository</name>
-            <url>https://nexus-backend.handy.travel/repository/maven-releases/</url>
+            <url>http://cspadmin:y5zrtWNU9Wd9XgUS@nexus-backend.handy.travel:8080/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-tinklabs</id>
             <name>Nexus tinklabs Repository</name>
-            <url>https://nexus-backend.handy.travel/repository/maven-snapshots/</url>
+            <url>http://cspadmin:y5zrtWNU9Wd9XgUS@nexus-backend.handy.travel:8080/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -161,11 +161,11 @@
         <repository>
             <id>nexus-tinklabs</id>
             <name>nexus-tinklabs</name>
-            <url>https://nexus-backend.handy.travel/repository/maven-public/</url>
+            <url>http://cspadmin:y5zrtWNU9Wd9XgUS@nexus-backend.handy.travel:8080/repository/maven-public/</url>
         </repository>
         <repository>
             <id>nexus-tinklabs-snapshots</id>
-            <url>https://nexus-backend.handy.travel/repository/maven-snapshots/</url>
+            <url>http://cspadmin:y5zrtWNU9Wd9XgUS@nexus-backend.handy.travel:8080/repository/maven-snapshots/</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
