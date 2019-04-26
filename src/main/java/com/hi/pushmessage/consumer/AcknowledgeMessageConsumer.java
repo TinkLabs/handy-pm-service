@@ -35,7 +35,7 @@ public class AcknowledgeMessageConsumer {
     private DevicesService devicesService;
     @KafkaListener(topics = {"acknowledge_message"})
     public void consumerAcknowledgeMessage(String message) throws Exception {
-        log.debug("receive message from topic 'acknowledge_message' : {}", message);
+        log.info("receive message from topic 'acknowledge_message' : {}", message);
         if (StringUtils.isNotEmpty(message)) {
             try{
                 MessageReceivedBo messageReceivedBo = JSONObject.parseObject(message, MessageReceivedBo.class);
