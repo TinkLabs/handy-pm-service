@@ -27,9 +27,10 @@ mybatis-plus:
     cache-enabled: false
 server:
   port: ${SERVER_PORT:8090}
+logging:
+  config: classpath:logback.xml
 spring:
   datasource:
-    druid:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:13306}/${DB_NAME:backend2}?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
     username: ${DB_USERNAME:root}
