@@ -7,4 +7,5 @@ package com.hi.pushmessage.common;
 public class Consts {
     public static final String DEVICE_IMEI = "Device-IMEI";
     public static final String BARCODE = "barcode";
+    public static final String _BARCODE = "_barcode";
 }

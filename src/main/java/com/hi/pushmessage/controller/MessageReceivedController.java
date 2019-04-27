@@ -12,6 +12,8 @@ import com.tinklabs.corecommonbase.response.RestResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -50,15 +52,16 @@ public class MessageReceivedController extends BaseController{
      * @return com.tinklabs.corecommonbase.response.RestResponse<CountryDto>
      */
     @ResponseBody
-    @PostMapping("/acknowledge")
-    public RestResponse<Boolean> acknowledge(Integer messageInfoId){
+    @PostMapping("/acknowledge/{messageInfoId}")
+    public RestResponse<Boolean> acknowledge(@PathVariable Integer messageInfoId){
         if(ObjectUtil.isNull(messageInfoId)){
             throw new BusinessException(PushMessageCodeEnum.MESSASGE_INFO_ID_EMPTY.getCode(),PushMessageCodeEnum.MESSASGE_INFO_ID_EMPTY.getMessage());
         }
-        String imei = request.getHeader(Consts.DEVICE_IMEI);
-        if(StringUtils.isBlank(imei)){
-            throw new BusinessException(PushMessageCodeEnum.HEADER_NO_IMEI.getCode(),PushMessageCodeEnum.HEADER_NO_IMEI.getMessage());
-        }
+       // String imei = request.getHeader(Consts.DEVICE_IMEI);
+//        if(StringUtils.isBlank(imei)){
+//            throw new BusinessException(PushMessageCodeEnum.HEADER_NO_IMEI.getCode(),PushMessageCodeEnum.HEADER_NO_IMEI.getMessage());
+//        }
+        String imei = request.getParameter(Consts._BARCODE);
         Wrapper wrapper = new EntityWrapper();
         wrapper.eq(Consts.BARCODE, imei);
         int count = devicesService.selectCount(wrapper);
