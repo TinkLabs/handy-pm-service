@@ -26,7 +26,8 @@ public interface MessageRecipientsMapper extends BaseMapper<MessageRecipients> {
              "       LEFT JOIN devices d ON mr.hotel_id = d.hotel_id " +
              "  AND mr.hotel_room_number = d.hotel_room_number " +
              " " +
-             "WHERE mi.send_at <= now() " +
+             //"WHERE mi.send_at <= now() " +
+             "WHERE 1 = 1 " +
              "  AND m.action = 'broadcastmessage' " +
              "  AND mr.status IN ('pending', 'sent') " +
              "  AND mi.id = #{messageInfoId} " +
