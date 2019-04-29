@@ -54,8 +54,8 @@ public class MessageReceivedController extends BaseController{
      * @return com.tinklabs.corecommonbase.response.RestResponse<java.lang.Boolean>
      */
     @ResponseBody
-    @PostMapping("/acknowledge")
-    public RestResponse<Boolean> acknowledge(Integer message_info_id, @CookieValue("barcode") String barcode){
+    @PostMapping("/acknowledge/{message_info_id}")
+    public RestResponse<Boolean> acknowledge(@PathVariable Integer message_info_id, @CookieValue("barcode") String barcode){
         if(ObjectUtil.isNull(message_info_id)){
             throw new BusinessException(PushMessageCodeEnum.MESSASGE_INFO_ID_EMPTY.getCode(),PushMessageCodeEnum.MESSASGE_INFO_ID_EMPTY.getMessage());
         }
