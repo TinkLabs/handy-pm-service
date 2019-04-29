@@ -12,6 +12,7 @@ import com.tinklabs.corecommonbase.response.RestResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,26 +45,22 @@ public class MessageReceivedController extends BaseController{
         result.setData("success.");
         return result;
     }
+
     /**
      * @description  for device acknowledge the receipt of the message
      * @author Landin
-     * @date 2019-04-12 16:40
-     * @param messageInfoId
-     * @return com.tinklabs.corecommonbase.response.RestResponse<CountryDto>
+     * @date 2019-04-29 14:22
+     * @param message_info_id, barcode
+     * @return com.tinklabs.corecommonbase.response.RestResponse<java.lang.Boolean>
      */
     @ResponseBody
-    @PostMapping("/acknowledge/{messageInfoId}")
-    public RestResponse<Boolean> acknowledge(@PathVariable Integer messageInfoId){
-        if(ObjectUtil.isNull(messageInfoId)){
+    @PostMapping("/acknowledge")
+    public RestResponse<Boolean> acknowledge(Integer message_info_id, @CookieValue("barcode") String barcode){
+        if(ObjectUtil.isNull(message_info_id)){
             throw new BusinessException(PushMessageCodeEnum.MESSASGE_INFO_ID_EMPTY.getCode(),PushMessageCodeEnum.MESSASGE_INFO_ID_EMPTY.getMessage());
         }
-       // String imei = request.getHeader(Consts.DEVICE_IMEI);
-//        if(StringUtils.isBlank(imei)){
-//            throw new BusinessException(PushMessageCodeEnum.HEADER_NO_IMEI.getCode(),PushMessageCodeEnum.HEADER_NO_IMEI.getMessage());
-//        }
-        String imei = request.getParameter(Consts._BARCODE);
         Wrapper wrapper = new EntityWrapper();
-        wrapper.eq(Consts.BARCODE, imei);
+        wrapper.eq(Consts.BARCODE, barcode);
         int count = devicesService.selectCount(wrapper);
         if(count == 0){
             throw new BusinessException(PushMessageCodeEnum.IMEI_NO_EXIST.getCode(),PushMessageCodeEnum.IMEI_NO_EXIST.getMessage());
@@ -71,8 +68,8 @@ public class MessageReceivedController extends BaseController{
         RestResponse<Boolean> response = new RestResponse<>();
         MessageReceivedBo messageReceivedBo = new MessageReceivedBo();
         messageReceivedBo.setAcknowledgeDatetime(new Date());
-        messageReceivedBo.setImei(imei);
-        messageReceivedBo.setMessageInfoId(messageInfoId);
+        messageReceivedBo.setImei(barcode);
+        messageReceivedBo.setMessageInfoId(message_info_id);
         messageReceivedService.sendAcknowledgeMessage(messageReceivedBo);
         response.setData(true);
         return response;
